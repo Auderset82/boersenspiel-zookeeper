@@ -10,12 +10,11 @@ services:
       ZOO_MAX_CLIENT_CNXNS: 60
       ZOO_AUTOPURGE_SNAP_RETAIN_COUNT: 3
       ZOO_AUTOPURGE_PURGE_INTERVAL: 1
-      JUTE_MAXBUFFER: 20971520  # 20MB max. Nachrichtengröße
+      JUTE_MAXBUFFER: 52428800  # ⬆️ Erhöhe auf 50MB statt 20MB
     networks:
       - kafka_network
     ports:
       - "22181:2181"
-
 
 networks:
   kafka_network:
