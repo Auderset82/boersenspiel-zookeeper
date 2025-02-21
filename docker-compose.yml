@@ -7,9 +7,15 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
-      ZOO_MAX_CLIENT_CNXNS: 60   # Erhöht die maximalen gleichzeitigen Verbindungen
-      ZOO_AUTOPURGE_SNAP_RETAIN_COUNT: 3  # Snapshots reduzieren
-      ZOO_AUTOPURGE_PURGE_INTERVAL: 1  # Auto-Purge für alte Snapshots
-      JUTE_MAXBUFFER: 20971520  # 20MB max. Nachrichtengröße (statt 1MB)
+      ZOO_MAX_CLIENT_CNXNS: 60
+      ZOO_AUTOPURGE_SNAP_RETAIN_COUNT: 3
+      ZOO_AUTOPURGE_PURGE_INTERVAL: 1
+      JUTE_MAXBUFFER: 20971520  # 20MB max. Nachrichtengröße
+    networks:
+      - kafka_network
     ports:
       - "2181:2181"
+
+networks:
+  kafka_network:
+    driver: bridge
