@@ -10,7 +10,8 @@ services:
       ZOO_MAX_CLIENT_CNXNS: 60
       ZOO_AUTOPURGE_SNAP_RETAIN_COUNT: 3
       ZOO_AUTOPURGE_PURGE_INTERVAL: 1
-      JUTE_MAXBUFFER: 52428800  # ⬆️ Erhöhe auf 50MB statt 20MB
+      JUTE_MAXBUFFER: 52428800  # 50MB
+      ZOO_LOG4J_PROP: "DEBUG, CONSOLE"  # 🔍 Setze das Logging-Level auf DEBUG
     networks:
       - kafka_network
     ports:
