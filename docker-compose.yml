@@ -14,7 +14,8 @@ services:
     networks:
       - kafka_network
     ports:
-      - "2181:2181"
+      - "22181:2181"
+
 
 networks:
   kafka_network:
